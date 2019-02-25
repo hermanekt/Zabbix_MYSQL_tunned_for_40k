@@ -206,7 +206,7 @@ mkdir /var/log/mariadb
 ```
 chown mysql:mysql /var/log/mariadb/
 ```
-**Restart mariDB and check log**
+**Restart mariaDB and check log**
 ```
 systemctl restart mysql.service
 ```
