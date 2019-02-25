@@ -195,7 +195,7 @@ vi /etc/security/limits.conf
 ```
 mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf_ORIG
 ```
-** Copy new configuration**
+**Copy new configuration**
 ```
 wget -O /etc/my.cnf.d/server.cnf https://github.com/hermanekt/Zabbix_MYSQL_tunned_for_25k/server.cnf
 ```
