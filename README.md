@@ -191,7 +191,7 @@ vi /etc/security/limits.conf
 ```
 
 ## 4) Use tunned my.cnf
-** Backup old config**
+**Backup old config**
 ```
 mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf_ORIG
 ```
@@ -199,14 +199,14 @@ mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf_ORIG
 ```
 wget -O /etc/my.cnf.d/server.cnf https://github.com/hermanekt/Zabbix_MYSQL_tunned_for_25k/server.cnf
 ```
-** Create log path**
+**Create log path**
 ```
 mkdir /var/log/mariadb
 ```
 ```
 chown mysql:mysql /var/log/mariadb/
 ```
-** Restart mariDB and check log**
+**Restart mariDB and check log**
 ```
 systemctl restart mysql.service
 ```
