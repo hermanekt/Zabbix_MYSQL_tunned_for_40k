@@ -1,0 +1,94 @@
+#
+# These groups are read by MariaDB server.
+# Use it for options that only the server (but not clients) should see
+#
+# See the examples of server my.cnf files in /usr/share/mysql/
+#
+
+# this is read by the standalone daemon and embedded servers
+[server]
+
+# this is only for the mysqld standalone daemon
+[mysqld]
+#Tuned by CoreIT s.r.o.
+open_files_limit 		= 16364
+max_connections                 = 500
+event_scheduler                 = 1
+wait_timeout 			= 86400
+default_storage_engine		= InnoDB
+
+log_error                       = /var/log/mariadb/mariadb-error.log
+slow_query_log_file             = /var/log/mariadb/mariadb-slow.log
+general_log_file                = /var/log/mariadb/mariadb.log
+general_log                     = 0
+slow_query_log                  = 0
+skip-name-resolve		= 1
+performance_schema		= ON
+
+innodb_autoinc_lock_mode	= 2
+innodb_flush_log_at_trx_commit	= 0
+#innodb_additional_mem_pool_size = 16M
+innodb_autoextend_increment 	= 256
+innodb_buffer_pool_instances 	= 12
+innodb_buffer_pool_size 	= 32G
+innodb_change_buffer_max_size 	= 50
+innodb_concurrency_tickets 	= 5000
+innodb_file_per_table 		= 1
+innodb_flush_method 		= O_DIRECT
+innodb_log_file_size 		= 512M
+innodb_log_files_in_group 	= 4
+innodb_old_blocks_time 		= 1000
+innodb_open_files 		= 2048
+innodb_stats_on_metadata 	= OFF
+innodb_lock_wait_timeout 	= 50
+innodb_io_capacity 		= 2000
+
+large-pages
+binlog-row-event-max-size 	= 8192
+character_set_server 		= utf8
+collation_server 		= utf8_bin
+expire_logs_days 		= 1
+join_buffer_size 		= 262144
+max_allowed_packet 		= 32M
+query_cache_type 		= 0
+query_cache_size 		= 0
+slow-query-log 			= ON
+table_open_cache 		= 2048
+thread_cache_size 		= 64
+tmp_table_size 			= 134217728
+thread_pool_size		= 12
+optimizer_switch		= 'index_condition_pushdown=off'
+
+#
+# * Galera-related settings
+#
+[galera]
+# Mandatory settings
+#wsrep_on=ON
+#wsrep_provider=
+#wsrep_cluster_address=
+#binlog_format=row
+#default_storage_engine=InnoDB
+#innodb_autoinc_lock_mode=2
+#
+# Allow server to accept connections on all interfaces.
+#
+bind-address=0.0.0.0
+#
+# Optional setting
+#wsrep_slave_threads=1
+#innodb_flush_log_at_trx_commit=0
+
+# this is only for embedded server
+[embedded]
+
+# This group is only read by MariaDB servers, not by MySQL.
+# If you use the same .cnf file for MySQL and MariaDB,
+# you can put MariaDB-only options here
+[mariadb]
+
+# This group is only read by MariaDB-10.3 servers.
+# If you use the same .cnf file for MariaDB of different versions,
+# use this group for options that older servers don't understand
+[mariadb-10.3]
+
