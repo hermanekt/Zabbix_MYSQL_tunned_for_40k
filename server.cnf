@@ -1,4 +1,6 @@
-#
+# Tunned for 25K zabbix info@tomashermanek.cz
+# https://github.com/hermanekt/Zabbix_MYSQL_tunned_for_25k
+
 # These groups are read by MariaDB server.
 # Use it for options that only the server (but not clients) should see
 #
@@ -27,7 +29,6 @@ performance_schema		= ON
 
 innodb_autoinc_lock_mode	= 2
 innodb_flush_log_at_trx_commit	= 0
-#innodb_additional_mem_pool_size = 16M
 innodb_autoextend_increment 	= 256
 innodb_buffer_pool_instances 	= 12
 innodb_buffer_pool_size 	= 32G
@@ -57,6 +58,7 @@ table_open_cache 		= 2048
 thread_cache_size 		= 64
 tmp_table_size 			= 134217728
 thread_pool_size		= 12
+# This is needed for best performance, this is bug with select BY ORDER
 optimizer_switch		= 'index_condition_pushdown=off'
 
 #
