@@ -23,6 +23,7 @@ systemctl enable mysql.service
 ```
 systemctl start mysql.service
 ```
+**Securing DB**
 ```
 /usr/bin/mysql_secure_installation
 ```
@@ -88,10 +89,10 @@ installation should now be secure.
 Thanks for using MariaDB!
 ```
 ## 2) Set partioning
-I use this howto for counting me momory
+**I use this howto for counting me momory**
 https://zabbix.org/wiki/Docs/howto/mysql_partition
 
-** After this i create task for automatic recreating tables and deleting this:
+** After this i create task for automatic recreating tables and deleting this:**
 ```
 mysql -p
 ```
@@ -102,7 +103,7 @@ MariaDB [(none)]> use zabbix;
 CREATE EVENT Partitions ON SCHEDULE EVERY 1 DAY DO CALL partition_maintenance_all('zabbix');
 ```
 
-** Check partitions:
+** Check partitions:**
 ```
 mysql -p
 ```
@@ -117,7 +118,7 @@ SELECT PARTITION_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE
 ```
 
 ## 3) Huge memory
-I use this howto for counting me momory
+**I use this howto for counting me momory**
 https://www.linkedin.com/pulse/configuring-huge-pages-mysql-server-red-hat-linux-juan-soto/
 ```
 vi /etc/security/limits.conf
@@ -190,6 +191,33 @@ vi /etc/security/limits.conf
 ```
 
 ## 4) Use tunned my.cnf
+** Backup old config**
+```
+mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf_ORIG
+```
+** Copy new configuration**
+```
+wget -O /etc/my.cnf.d/server.cnf https://github.com/hermanekt/Zabbix_MYSQL_tunned_for_25k/server.cnf
+```
+** Create log path**
+```
+mkdir /var/log/mariadb
+```
+```
+chown mysql:mysql /var/log/mariadb/
+```
+** Restart mariDB and check log**
+```
+systemctl restart mysql.service
+```
+```
+less /var/log/mariadb/mariadb-error.log
 ```
 
-```
+## Authors
+
+* **Tomas Hermanek** - *Initial work* - [hermanekt](https://github.com/hermanekt)
+
+## Acknowledgments
+
+### This is Alfa version, please give me feadback if you find bug or need some another check. Email is info"@"tomashermanek.cz, twitter is: hermanekt.
