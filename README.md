@@ -91,7 +91,7 @@ Thanks for using MariaDB!
 I use this howto for counting me momory
 https://zabbix.org/wiki/Docs/howto/mysql_partition
 
-**After this i create task for automatic recreating tables and deleting this:
+** After this i create task for automatic recreating tables and deleting this:
 ```
 mysql -p
 ```
@@ -102,7 +102,7 @@ MariaDB [(none)]> use zabbix;
 CREATE EVENT Partitions ON SCHEDULE EVERY 1 DAY DO CALL partition_maintenance_all('zabbix');
 ```
 
-**Check partitions:
+** Check partitions:
 ```
 mysql -p
 ```
