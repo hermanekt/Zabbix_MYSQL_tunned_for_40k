@@ -118,7 +118,7 @@ SELECT PARTITION_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE
 ```
 
 ## 3) Huge memory
-**I use this howto for counting me momory**
+**I use this howto for counting my momory**
 https://www.linkedin.com/pulse/configuring-huge-pages-mysql-server-red-hat-linux-juan-soto/
 ```
 vi /etc/security/limits.conf
