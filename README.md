@@ -197,7 +197,7 @@ mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf_ORIG
 ```
 **Copy new configuration**
 ```
-wget -O /etc/my.cnf.d/server.cnf https://raw.githubusercontent.com/hermanekt/Zabbix_MYSQL_tunned_for_25k/master/server.cnf
+wget -O /etc/my.cnf.d/server.cnf https://raw.githubusercontent.com/hermanekt/Zabbix_MYSQL_tunned_for_40k/master/server.cnf
 ```
 **Create log path**
 ```
