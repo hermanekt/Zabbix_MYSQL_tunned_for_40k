@@ -23,7 +23,6 @@ log_error                       = /var/log/mariadb/mariadb-error.log
 slow_query_log_file             = /var/log/mariadb/mariadb-slow.log
 general_log_file                = /var/log/mariadb/mariadb.log
 general_log                     = 0
-slow_query_log                  = 0
 skip-name-resolve		= 1
 performance_schema		= ON
 
