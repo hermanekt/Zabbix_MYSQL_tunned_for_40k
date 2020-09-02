@@ -1,5 +1,5 @@
-# Zabbix MYSQL tunned for 40000 values per second.
-This is repo for tunned mysql configuration. This mysql configuration can take 40k values per second. Server is VM in VMWare. HW: 12cpu, 48GB RAM, 400GB SAS HDD. SW: Zabbix 4, CentOS 7, MariaDB 10.3. Server is only for DB.
+# Zabbix MYSQL tuned for 40000 values per second.
+This is repo for tuned mysql configuration. This mysql configuration can take 40k values per second. Server is VM in VMWare. HW: 12cpu, 48GB RAM, 400GB SAS HDD. SW: Zabbix 4, CentOS 7, MariaDB 10.3. Server is only for DB.
 
 
 How i have configured server:
@@ -190,7 +190,7 @@ vi /etc/security/limits.conf
 # End of file
 ```
 
-## 4) Use tunned my.cnf
+## 4) Use tuned my.cnf
 **Backup old config**
 ```
 mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf_ORIG
