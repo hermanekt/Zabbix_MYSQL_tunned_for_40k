@@ -89,7 +89,7 @@ installation should now be secure.
 Thanks for using MariaDB!
 ```
 ## 2) Set partioning
-**I use this howto for counting me momory**
+**I use this howto for setting of partitionings**
 https://zabbix.org/wiki/Docs/howto/mysql_partition
 
 **After this i create task for automatic recreating tables and deleting this:**
